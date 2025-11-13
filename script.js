@@ -23,7 +23,7 @@ const adventMessages = {
     21: "🧸 Ein kleines Kuscheltier! Für die Nächte, wenn ich nicht da bin - es passt auf dich auf! 🐻",
     22: "🕊️ Massage-Gutschein! Entspannung pur - du hast dir eine Auszeit verdient - Massage gibts von mir 💆‍♀️",
     23: "🧺 Picknick im Frühling/Sommer! Ein schöner Tag draußen, nur wir zwei und leckeres Essen 🌞",
-    24: "🎄✨ FROHE WEIHNACHTEN, meine allerliebste Freundin! ✨🎄\n\n🎁 Du bist das wertvollste Geschenk in meinem Leben!\n💖 Jeder Tag mit dir ist wie Weihnachten!\n⭐ Du machst mein Leben heller als alle Sterne zusammen!\n\n🥰 Ich liebe dich mehr als Worte es je ausdrücken könnten!\n\nDein größtes Geschenk kommt noch... 😉❤️\n\n🎅 Ho ho ho - Frohe Weihnachten, mein Schatz! �"
+    24: "🎄✨ FROHE WEIHNACHTEN, meine allerliebste Freundin! ✨🎄\n\n🎁 Du bist das wertvollste Geschenk in meinem Leben!\n💖 Ich liebe dich mehr als Worte es je ausdrücken könnten! 🥰\n\nDein größtes Geschenk...bin eh ich😉❤️\n\n🎅 Ho ho ho - Frohe Weihnachten Schatz!"
 };
 
 // Aktuelle Datums-Logik
