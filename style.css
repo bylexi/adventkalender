@@ -126,7 +126,17 @@ h1 {
 .calendar-door.opened {
     background: linear-gradient(45deg, #FFD700, #FFA500);
     border-color: #FF8C00;
-    transform: rotateY(180deg);
+    animation: openedGlow 2s infinite alternate;
+    transform: scale(1.05);
+}
+
+@keyframes openedGlow {
+    0% { 
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3), 0 0 15px rgba(255,215,0,0.5);
+    }
+    100% { 
+        box-shadow: 0 8px 16px rgba(0,0,0,0.4), 0 0 25px rgba(255,215,0,0.8);
+    }
 }
 
 .calendar-door.locked {
