@@ -329,3 +329,20 @@ if ('serviceWorker' in navigator) {
             });
     });
 }
+
+// RESET-FUNKTION für den Entwickler
+function resetCalendar() {
+    // Alle gespeicherten Türchen-Status löschen
+    for (let day = 1; day <= 24; day++) {
+        localStorage.removeItem(`door-${day}`);
+    }
+    
+    // Kalender neu erstellen
+    createCalendar();
+    
+    console.log('🔒 Kalender wurde zurückgesetzt - alle Türchen sind wieder verriegelt!');
+    alert('🔒 Kalender wurde zurückgesetzt!\nAlle Türchen sind wieder korrekt verriegelt.');
+}
+
+// Reset-Funktion für globalen Zugriff verfügbar machen
+window.resetCalendar = resetCalendar;
