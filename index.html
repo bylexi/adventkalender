@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de-at">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❄️ Adventkalender für meine Liebste</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1a472a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Adventkalender">
+    <link rel="apple-touch-icon" href="icon-192.png">
+</head>
+<body>
+    <div class="snow-container"></div>
+    
+    <header>
+        <h1>🎄 Adventkalender 🎄</h1>
+        <p class="subtitle">Für die wunderbarste Freundin der Welt ❤️</p>
+        <div class="current-date" id="currentDate"></div>
+    </header>
+
+    <main class="calendar-grid" id="calendarGrid">
+        <!-- Türchen werden durch JavaScript generiert -->
+    </main>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <div class="modal-header">
+                <h2 id="modalTitle">Türchen 1</h2>
+                <div class="modal-date" id="modalDate">1. Dezember</div>
+            </div>
+            <div class="modal-body">
+                <div class="gift-icon">🎁</div>
+                <p id="modalText">Frohe Weihnachten!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
