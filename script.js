@@ -23,7 +23,7 @@ const adventMessages = {
     21: "🧸 Ein kleines Kuscheltier! Für die Nächte, wenn ich nicht da bin - es passt auf dich auf! 🐻",
     22: "🕊️ Massage-Gutschein! Entspannung pur - du hast dir eine Auszeit verdient - Massage gibts von mir 💆‍♀️",
     23: "🧺 Picknick im Frühling/Sommer! Ein schöner Tag draußen, nur wir zwei und leckeres Essen 🌞",
-    24: "🎄✨ Das große Weihnachtsgeschenk! Lass dich überraschen! 🎁❤️"
+    24: "🎄✨ FROHE WEIHNACHTEN, meine allerliebste Freundin! ✨🎄\n\n🎁 Du bist das wertvollste Geschenk in meinem Leben!\n💖 Jeder Tag mit dir ist wie Weihnachten!\n⭐ Du machst mein Leben heller als alle Sterne zusammen!\n\n🥰 Ich liebe dich mehr als Worte es je ausdrücken könnten!\n\nDein größtes Geschenk kommt noch... 😉❤️\n\n🎅 Ho ho ho - Frohe Weihnachten, mein Schatz! �"
 };
 
 // Aktuelle Datums-Logik
@@ -90,6 +90,9 @@ function createCalendar() {
         const isAvailable = isDayAvailable(day);
         const isOpened = localStorage.getItem(`door-${day}`) === 'opened';
         
+        // Spezial-Styling für Türchen 24
+        door.setAttribute('data-day', day);
+        
         if (isOpened) {
             door.classList.add('opened');
         } else if (isAvailable) {
@@ -119,20 +122,148 @@ function openDoor(day, isAvailable, isOpened) {
     // Als geöffnet markieren
     localStorage.setItem(`door-${day}`, 'opened');
     
+    // Spezial-Effekte für Türchen 24
+    if (day === 24) {
+        createChristmasSpectacle();
+    }
+    
     // Modal öffnen
     const modal = document.getElementById('modal');
     const modalTitle = document.getElementById('modalTitle');
     const modalDate = document.getElementById('modalDate');
     const modalText = document.getElementById('modalText');
     
-    modalTitle.textContent = `Türchen ${day}`;
-    modalDate.textContent = `${day}. Dezember`;
+    // Spezial-Modal für Türchen 24
+    if (day === 24) {
+        modal.classList.add('christmas-special');
+        modalTitle.textContent = `🎄✨ DAS GROSSE FINALE! ✨🎄`;
+        modalDate.textContent = `24. Dezember - HEILIGABEND`;
+    } else {
+        modal.classList.remove('christmas-special');
+        modalTitle.textContent = `Türchen ${day}`;
+        modalDate.textContent = `${day}. Dezember`;
+    }
+    
     modalText.textContent = adventMessages[day] || "Ein wundervoller Tag mit dir! ❤️";
     
     modal.style.display = 'block';
     
     // Kalender aktualisieren
     createCalendar();
+}
+
+// WEIHNACHTS-SPEKTAKEL für Türchen 24
+function createChristmasSpectacle() {
+    // Konfetti erstellen
+    createConfetti();
+    
+    // Feuerwerk erstellen
+    setTimeout(() => createFireworks(), 500);
+    setTimeout(() => createFireworks(), 1000);
+    setTimeout(() => createFireworks(), 1500);
+    
+    // Weihnachtsmusik-Effekt (visuell)
+    createMusicNotes();
+}
+
+function createConfetti() {
+    const confettiContainer = document.createElement('div');
+    confettiContainer.className = 'confetti-container';
+    document.body.appendChild(confettiContainer);
+    
+    const colors = ['#FFD700', '#FF6B35', '#FF1744', '#8E24AA', '#4CAF50', '#2196F3'];
+    
+    for (let i = 0; i < 100; i++) {
+        setTimeout(() => {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = Math.random() * 100 + '%';
+            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            confetti.style.animationDelay = Math.random() * 2 + 's';
+            confettiContainer.appendChild(confetti);
+            
+            // Konfetti nach Animation entfernen
+            setTimeout(() => {
+                if (confetti.parentNode) {
+                    confetti.parentNode.removeChild(confetti);
+                }
+            }, 5000);
+        }, i * 50);
+    }
+    
+    // Container nach 10 Sekunden entfernen
+    setTimeout(() => {
+        if (confettiContainer.parentNode) {
+            confettiContainer.parentNode.removeChild(confettiContainer);
+        }
+    }, 10000);
+}
+
+function createFireworks() {
+    const fireworkContainer = document.createElement('div');
+    fireworkContainer.className = 'firework-container';
+    document.body.appendChild(fireworkContainer);
+    
+    const colors = ['#FFD700', '#FF6B35', '#FF1744', '#8E24AA', '#4CAF50', '#2196F3', '#FFFFFF'];
+    
+    // 3 Feuerwerke gleichzeitig
+    for (let f = 0; f < 3; f++) {
+        const centerX = Math.random() * window.innerWidth;
+        const centerY = Math.random() * (window.innerHeight * 0.6) + window.innerHeight * 0.2;
+        
+        // Jedes Feuerwerk hat 20 Partikel
+        for (let i = 0; i < 20; i++) {
+            const firework = document.createElement('div');
+            firework.className = 'firework';
+            firework.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            firework.style.left = centerX + 'px';
+            firework.style.top = centerY + 'px';
+            
+            const angle = (i * 18) * Math.PI / 180; // 360° / 20 = 18°
+            const distance = Math.random() * 100 + 50;
+            
+            firework.style.setProperty('--end-x', Math.cos(angle) * distance + 'px');
+            firework.style.setProperty('--end-y', Math.sin(angle) * distance + 'px');
+            firework.style.animation = `fireworkExplode 1.5s ease-out forwards`;
+            firework.style.transform = `translate(var(--end-x, 0), var(--end-y, 0))`;
+            
+            fireworkContainer.appendChild(firework);
+        }
+    }
+    
+    // Container nach 2 Sekunden entfernen
+    setTimeout(() => {
+        if (fireworkContainer.parentNode) {
+            fireworkContainer.parentNode.removeChild(fireworkContainer);
+        }
+    }, 2000);
+}
+
+function createMusicNotes() {
+    const notes = ['🎵', '🎶', '♪', '♫'];
+    
+    for (let i = 0; i < 15; i++) {
+        setTimeout(() => {
+            const note = document.createElement('div');
+            note.className = 'snowflake'; // Nutze die gleiche Animation wie Schneeflocken
+            note.innerHTML = notes[Math.floor(Math.random() * notes.length)];
+            note.style.left = Math.random() * 100 + '%';
+            note.style.fontSize = (Math.random() * 15 + 15) + 'px';
+            note.style.color = '#FFD700';
+            note.style.animationDuration = (Math.random() * 4 + 3) + 's';
+            note.style.zIndex = '1000';
+            
+            document.querySelector('.snow-container').appendChild(note);
+            
+            // Note nach Animation entfernen
+            setTimeout(() => {
+                if (note.parentNode) {
+                    note.parentNode.removeChild(note);
+                }
+            }, 7000);
+        }, i * 200);
+    }
 }
 
 // Aktuelles Datum anzeigen

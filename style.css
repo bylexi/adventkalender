@@ -294,3 +294,154 @@ h1 {
         font-size: 1.2rem;
     }
 }
+
+/* BESONDERE STYLES FÜR TÜRCHEN 24 */
+.calendar-door[data-day="24"] {
+    background: linear-gradient(45deg, #FFD700, #FF6B35, #FF1744, #8E24AA);
+    background-size: 400% 400%;
+    animation: christmasGradient 3s ease infinite, specialPulse 2s infinite;
+    border: 4px solid #FFD700;
+    position: relative;
+    overflow: visible;
+}
+
+@keyframes christmasGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes specialPulse {
+    0% { box-shadow: 0 4px 8px rgba(0,0,0,0.3), 0 0 0 0 rgba(255,215,0,0.8); }
+    70% { box-shadow: 0 8px 16px rgba(0,0,0,0.4), 0 0 0 20px rgba(255,215,0,0); }
+    100% { box-shadow: 0 4px 8px rgba(0,0,0,0.3), 0 0 0 0 rgba(255,215,0,0); }
+}
+
+.calendar-door[data-day="24"]::before {
+    content: '✨';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    font-size: 1.5rem;
+    animation: sparkle 1.5s infinite;
+}
+
+.calendar-door[data-day="24"]::after {
+    content: '✨';
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    font-size: 1.5rem;
+    animation: sparkle 1.5s infinite 0.7s;
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
+    50% { opacity: 0.5; transform: scale(1.3) rotate(180deg); }
+}
+
+/* SPEZIAL MODAL FÜR TÜRCHEN 24 */
+.modal.christmas-special .modal-content {
+    max-width: 700px;
+    background: linear-gradient(135deg, #1a472a, #2d5016, #8B0000);
+    border: 3px solid #FFD700;
+    animation: christmasModalGlow 2s infinite alternate;
+}
+
+@keyframes christmasModalGlow {
+    0% { box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 30px rgba(255,215,0,0.3); }
+    100% { box-shadow: 0 15px 40px rgba(0,0,0,0.7), 0 0 50px rgba(255,215,0,0.6); }
+}
+
+.modal.christmas-special .modal-header {
+    background: linear-gradient(45deg, #FFD700, #FF6B35, #FF1744);
+    background-size: 400% 400%;
+    animation: christmasGradient 3s ease infinite;
+    padding: 2rem;
+}
+
+.modal.christmas-special .modal-header h2 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    animation: christmasTitle 2s ease-in-out infinite;
+}
+
+@keyframes christmasTitle {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.modal.christmas-special .gift-icon {
+    font-size: 4rem;
+    animation: christmasGiftBounce 1s infinite;
+}
+
+@keyframes christmasGiftBounce {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    25% { transform: translateY(-15px) rotate(5deg); }
+    50% { transform: translateY(-10px) rotate(-3deg); }
+    75% { transform: translateY(-20px) rotate(3deg); }
+}
+
+/* KONFETTI ANIMATION */
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    animation: confettiFall linear infinite;
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(-100vh) rotateZ(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotateZ(720deg);
+        opacity: 0;
+    }
+}
+
+/* FEUERWERK ANIMATION */
+.firework-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9998;
+}
+
+.firework {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    animation: fireworkExplode 1.5s ease-out;
+}
+
+@keyframes fireworkExplode {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
