@@ -41,14 +41,13 @@ function isDecember() {
 }
 
 function isDayAvailable(day) {
-    // TEST-MODUS: Alle Türchen verfügbar zum Testen
-    return true;
-    
-    // ORIGINAL-CODE (für später wieder aktivieren):
-    // const current = getCurrentDate();
-    // return (current.month === 12 && current.day >= day) || 
-    //        (current.month > 12) || 
-    //        (current.month === 1 && current.year > 2024);
+    const current = getCurrentDate();
+    // Türchen ist verfügbar wenn:
+    // 1. Es ist Dezember UND der Tag ist erreicht oder überschritten
+    // 2. ODER es ist nach dem 24. Dezember (dann sind alle verfügbar)
+    return (current.month === 12 && current.day >= day) || 
+           (current.month > 12) || 
+           (current.month === 1 && current.year > 2024); // Für das nächste Jahr
 }
 
 // Schnee Animation
