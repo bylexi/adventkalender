@@ -1,29 +1,29 @@
 // Adventkalender Daten - Hier kannst du die Geschenke und Aktivitäten für deine Freundin eintragen
 const adventMessages = {
     1: "🧦 Ein Paar kuschelige Weihnachtssocken! Damit deine Füße immer warm bleiben, so wie mein Herz bei dir. ❤️",
-    2: "☕ Gemeinsam Frühstücken gehen! Ich lade zu deinem lieblings Frühstück ein. 🥐",
+    2: "🛍️ Zusammen shoppen gehen! 🛍️",
     3: "📚 Ein neues Buch! Such dir eins aus, das du schon lange lesen wolltest - ich bezahle! 📖",
     4: "🎬 Kino-Abend! Du darfst den Film aussuchen, ich besorge das Popcorn! 🍿",
-    5: "🍪 Kekse backen zusammen! Wir machen deine Lieblingskekse 😋",
+    5: "🍪 Zusammen Kekse backen! 😋",
     6: "🌳 Zusammen spazieren gehen! Frische Luft und schöne Gespräche - nur wir zwei 🌳",
     7: "🍽️ Einladung zum Beef Tatar mit Erdäpfelsalat Essen beim Gasthaus Riegler 🍽️",
-    8: "🎄 Besuch auf Christkindlmarkt deiner Wahl 🎄",
-    9: "🛍️ Zusammen shoppen gehen! Lass uns einen Tag in der Stadt verbringen und nach Herzenslust shoppen! 🛍️",
-    10: "🌙 Sternen-Nacht! Wir fahren raus aus der Stadt und schauen Sterne - mit heißem Kakao! ⭐",
-    11: "☃️ Schneemann-Bau-Kit! Mütze, Schal und Karotte - bereit für unseren Schneemann! ⛄",
+    8: "☕ Gemeinsam Frühstücken gehen! Ich lade zu deinem lieblings Frühstück ein oder richte dir Zuhause frühstück. 🥐",
+    9: "🎄 Besuch auf Christkindlmarkt deiner Wahl 🎄",
+    10: "🌙 Sternen-Nacht! Wir fahren raus aus der Stadt und schauen Sterne - mit heißem Tee/Kakao! ⭐",
+    11: "🎾 Zusammen Paddel Tennis spielen - für den sportlichen Ausgleich bei den ganze Keksen 🎾",
     12: "💅 Nagel-Gutschein! Gönn dir schöne Nägel - du verdienst es, verwöhnt zu werden! 💖",
     13: "⛸️ Zusammen Eislaufen gehen! Halte meine Hand, wenn du fällst - ich bin immer für dich da! ⛸️",
     14: "🚗 Neue Scheibenwischer für dein Auto! Sicherheit geht vor, mein Schatz! 🚗",
-    15: "👕 Partner-Look - Weihnachtspyjama für uns beide 🎅🤶",
+    15: "👕 Partner-Look - Weihnachtspulli für uns beide 🎅🤶",
     16: "🎪 Spieleabend! Ein neues Spiel für uns beide - Lachen und Spaß garantiert! 🎲",
     17: "🍳 Zusammen kochen! Wir zaubern gemeinsam ein leckeres Essen in unserer Küche 👩‍🍳",
     18: "🛏️ Eine neue Bettwäschegarnitur! Frisch und gemütlich für süße Träume zusammen 🛏️",
-    19: "🍕 Pizza-Date! Deine Lieblingspizza, dazu einen schönen Film - perfekter Abend! 🍕",
+    19: "🍅 Tomaten Mozzarella? Kein Problem! Zurbereitet vom Meister höchstpersönlich 🧀",
     20: "💫 Überraschungs-Ausflug! Pack warme Sachen ein, wir gehen irgendwohin Schönes! 🚗",
-    21: "🧸 Ein kleines Kuscheltier! Für die Nächte, wenn ich nicht da bin - es passt auf dich auf! 🐻",
+    21: "🧸 Ein kleiner Schlüsselanhänger! Für deine Schlüssel, damit du immer an mich denkst! 🔑",
     22: "🕊️ Massage-Gutschein! Entspannung pur - du hast dir eine Auszeit verdient - Massage gibts von mir 💆‍♀️",
     23: "🧺 Picknick im Frühling/Sommer! Ein schöner Tag draußen, nur wir zwei und leckeres Essen 🌞",
-    24: "🎄✨ FROHE WEIHNACHTEN, meine allerliebste Freundin! ✨🎄\n\n🎁 Du bist das wertvollste Geschenk in meinem Leben!\n💖 Ich liebe dich mehr als Worte es je ausdrücken könnten! 🥰\n\nDein größtes Geschenk...bin eh ich😉❤️\n\n🎅 Ho ho ho - Frohe Weihnachten Schatz!"
+    24: "🎄✨ FROHE WEIHNACHTEN, meine allerliebste Freundin! ✨🎄\n\n🎁 Du bist das wertvollste Geschenk in meinem Leben!\n💖 Ich liebe dich mehr als Worte es je ausdrücken könnten! 🥰\n\nDein größtes Geschenk...bin eh ich😉❤️\n\n🎅 Du hast einen Wunsch frei - Frohe Weihnachten Schatz!"
 };
 
 // Aktuelle Datums-Logik
