@@ -287,29 +287,38 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCurrentDate();
     createSnowflakes();
     
-    // Modal schließen
+    // Modal schließen Funktion
+    function closeModal() {
+        const modal = document.getElementById('modal');
+        modal.style.display = 'none';
+        modal.classList.remove('christmas-special');
+    }
+    
+    // Modal schließen Event-Listener
     const modal = document.getElementById('modal');
     const closeBtn = document.getElementById('closeModal');
     
-    closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-        modal.classList.remove('christmas-special'); // Spezial-Klasse entfernen
+    closeBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeModal();
     });
     
-    window.addEventListener('click', function(event) {
+    modal.addEventListener('click', function(event) {
         if (event.target === modal) {
-            modal.style.display = 'none';
-            modal.classList.remove('christmas-special'); // Spezial-Klasse entfernen
+            closeModal();
         }
     });
     
-    // ESC-Taste zum Schließen hinzufügen
+    // ESC-Taste zum Schließen
     document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape' && modal.style.display === 'block') {
-            modal.style.display = 'none';
-            modal.classList.remove('christmas-special'); // Spezial-Klasse entfernen
+        if (event.key === 'Escape') {
+            closeModal();
         }
     });
+    
+    // Globale Close-Funktion für Debugging
+    window.closeModal = closeModal;
     
     // Täglich um Mitternacht den Kalender aktualisieren
     const now = new Date();
