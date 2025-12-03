@@ -293,11 +293,21 @@ document.addEventListener('DOMContentLoaded', function() {
     
     closeBtn.addEventListener('click', function() {
         modal.style.display = 'none';
+        modal.classList.remove('christmas-special'); // Spezial-Klasse entfernen
     });
     
     window.addEventListener('click', function(event) {
         if (event.target === modal) {
             modal.style.display = 'none';
+            modal.classList.remove('christmas-special'); // Spezial-Klasse entfernen
+        }
+    });
+    
+    // ESC-Taste zum Schließen hinzufügen
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && modal.style.display === 'block') {
+            modal.style.display = 'none';
+            modal.classList.remove('christmas-special'); // Spezial-Klasse entfernen
         }
     });
     
